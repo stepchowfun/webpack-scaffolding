@@ -1,5 +1,6 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -28,7 +29,7 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           { loader: 'css-loader', options: { sourceMap: true } },
           { loader: 'postcss-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
@@ -46,12 +47,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index.html',
     }),
+    new MiniCssExtractPlugin({
+      filename: '[contenthash].css',
+    }),
     new CopyPlugin({
       patterns: [{ from: 'static', to: '.' }],
     }),
   ],
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'source-map',
