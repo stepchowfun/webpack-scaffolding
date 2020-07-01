@@ -40,16 +40,18 @@ tasks:
       - install_dependencies
     input_paths:
       # All the top-level paths in the repo except `.git` and those in `.gitignore`
-      - .github/
-      - src/
-      - static/
       - .eslintrc.js
+      - .github/workflows/
       - .gitignore
       - .prettierrc.json
+      - README.md
+      - babel.config.json
+      - jest.config.js
       - package-lock.json
       - package.json
       - postcss.config.js
-      - README.md
+      - src/
+      - static/
       - toast.yml
       - tsconfig.json
       - webpack.common.js
@@ -76,16 +78,18 @@ tasks:
       - install_dependencies
     input_paths:
       # All the top-level paths in the repo except `.git` and those in `.gitignore`
-      - .github/
-      - src/
-      - static/
       - .eslintrc.js
+      - .github/workflows/
       - .gitignore
       - .prettierrc.json
+      - README.md
+      - babel.config.json
+      - jest.config.js
       - package-lock.json
       - package.json
       - postcss.config.js
-      - README.md
+      - src/
+      - static/
       - toast.yml
       - tsconfig.json
       - webpack.common.js
@@ -93,16 +97,18 @@ tasks:
       - webpack.production.js
     output_paths:
       # All the top-level paths in the repo except `.git` and those in `.gitignore`
-      - .github/
-      - src/
-      - static/
       - .eslintrc.js
+      - .github/workflows/
       - .gitignore
       - .prettierrc.json
+      - README.md
+      - babel.config.json
+      - jest.config.js
       - package-lock.json
       - package.json
       - postcss.config.js
-      - README.md
+      - src/
+      - static/
       - toast.yml
       - tsconfig.json
       - webpack.common.js

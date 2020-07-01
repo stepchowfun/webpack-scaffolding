@@ -1,12 +1,10 @@
 import './style';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import greet from './greeting';
-
-greet();
+import sum from './sum';
 
 function Main() {
-  return <p>Hello, World!</p>;
+  return <p>Hello, {sum(1, 2)}!</p>;
 }
 
 ReactDOM.render(<Main />, document.getElementById('react-root'));
