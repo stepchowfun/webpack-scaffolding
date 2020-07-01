@@ -1,10 +1,10 @@
 @import '~sanitize.css';
-@import '~sanitize.css/forms.css';
-@import '~sanitize.css/typography.css';
+@import '~sanitize.css/forms';
+@import '~sanitize.css/typography';
 
 $body-color: red;
 
 body {
-  background: url('icons.svg') repeat #cfcfe6;
+  background: url('./icons') repeat #cfcfe6;
   user-select: none;
 }

@@ -10,6 +10,13 @@ tasks:
       apt-get update
       apt-get install --yes nodejs
 
+  install_tagref:
+    dependencies:
+      - install_packages
+    command: |
+      set -euo pipefail
+      curl https://raw.githubusercontent.com/stepchowfun/tagref/master/install.sh -LSfs | sh
+
   create_user:
     command: |
       set -euo pipefail
@@ -19,6 +26,7 @@ tasks:
     dependencies:
       - create_user
       - install_packages
+      - install_tagref
     input_paths:
       - package-lock.json
       - package.json
@@ -60,7 +68,8 @@ tasks:
     user: user
     command: |
       set -euo pipefail
-      npm run check-without-building
+      npm run check
+      tagref
 
   format:
     dependencies:
