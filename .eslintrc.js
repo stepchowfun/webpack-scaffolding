@@ -22,7 +22,7 @@ module.exports = {
   rules: {
     'import/extensions': ['error', 'never'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
   },
   settings: {
     'import/resolver': {
