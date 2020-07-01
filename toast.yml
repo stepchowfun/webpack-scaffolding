@@ -1,0 +1,118 @@
+image: ubuntu:18.04
+default: check
+tasks:
+  install_packages:
+    command: |
+      set -euo pipefail
+      apt-get update
+      apt-get install --yes curl
+      curl -sL https://deb.nodesource.com/setup_14.x | bash -
+      apt-get update
+      apt-get install --yes nodejs
+
+  create_user:
+    command: |
+      set -euo pipefail
+      adduser --disabled-password --gecos '' user
+
+  install_dependencies:
+    dependencies:
+      - create_user
+      - install_packages
+    input_paths:
+      - package-lock.json
+      - package.json
+    user: user
+    command: |
+      set -euo pipefail
+      npm ci
+
+  build:
+    dependencies:
+      - install_dependencies
+    input_paths:
+      # All the top-level paths in the repo except `.git` and those in `.gitignore`
+      - .github/
+      - src/
+      - static/
+      - .eslintrc.js
+      - .gitignore
+      - .prettierrc.json
+      - package-lock.json
+      - package.json
+      - postcss.config.js
+      - README.md
+      - toast.yml
+      - tsconfig.json
+      - webpack.common.js
+      - webpack.development.js
+      - webpack.production.js
+    output_paths:
+      - dist
+    user: user
+    command: |
+      set -euo pipefail
+      npm run build-production
+
+  check:
+    dependencies:
+      - build
+    user: user
+    command: |
+      set -euo pipefail
+      npm run check-without-building
+
+  format:
+    dependencies:
+      - install_dependencies
+    input_paths:
+      # All the top-level paths in the repo except `.git` and those in `.gitignore`
+      - .github/
+      - src/
+      - static/
+      - .eslintrc.js
+      - .gitignore
+      - .prettierrc.json
+      - package-lock.json
+      - package.json
+      - postcss.config.js
+      - README.md
+      - toast.yml
+      - tsconfig.json
+      - webpack.common.js
+      - webpack.development.js
+      - webpack.production.js
+    output_paths:
+      # All the top-level paths in the repo except `.git` and those in `.gitignore`
+      - .github/
+      - src/
+      - static/
+      - .eslintrc.js
+      - .gitignore
+      - .prettierrc.json
+      - package-lock.json
+      - package.json
+      - postcss.config.js
+      - README.md
+      - toast.yml
+      - tsconfig.json
+      - webpack.common.js
+      - webpack.development.js
+      - webpack.production.js
+    user: user
+    command: |
+      set -euo pipefail
+      npm run format
+
+  development:
+    cache: false
+    dependencies:
+      - install_dependencies
+    mount_paths:
+      - .
+    ports:
+      - 8080:8080
+    user: user
+    command: |
+      set -euo pipefail
+      npm run development
