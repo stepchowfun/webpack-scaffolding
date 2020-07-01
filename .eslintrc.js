@@ -17,7 +17,8 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        // See [ref:css-extension].
+        extensions: ['.js', '.ts', '.tsx', '.scss', '.svg'],
       },
     },
     react: {

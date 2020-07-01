@@ -9,7 +9,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   entry: './src/index.tsx',
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    // Note that CSS files imported from SCSS files are read directly by `css-loader` and don't go
+    // through Webpack's loader mechanism. Thus, we don't need to list `.css` here.
+    // [tag:css-extension]
+    extensions: ['.js', '.ts', '.tsx', '.scss', '.svg'],
   },
   module: {
     rules: [
