@@ -29,7 +29,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'jest'],
   rules: {
-    'import/extensions': ['error', 'never'],
+    'import/extensions': ['error', 'never', { svg: 'always' }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
   },
