@@ -2,9 +2,7 @@
 @import '~sanitize.css/forms';
 @import '~sanitize.css/typography';
 
-$body-color: red;
-
 body {
-  background: url('./icons') repeat #cfcfe6;
-  user-select: none;
+  text-align: center;
+  color: #333333;
 }

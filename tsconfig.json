@@ -5,5 +5,5 @@
     "moduleResolution": "node",
     "strict": true
   },
-  "files": ["src/index.tsx"]
+  "files": ["src/images.d.ts", "src/main.tsx"]
 }

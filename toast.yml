@@ -39,9 +39,9 @@ tasks:
     dependencies:
       - install_dependencies
     input_paths:
-      # All the top-level paths in the repo except `.git` and those in `.gitignore`
+      # All the top-level paths in the repository except `.git` and those in `.gitignore`
       - .eslintrc.js
-      - .github/workflows/
+      - .github/
       - .gitignore
       - .prettierrc.json
       - README.md
@@ -77,9 +77,9 @@ tasks:
     dependencies:
       - install_dependencies
     input_paths:
-      # All the top-level paths in the repo except `.git` and those in `.gitignore`
+      # All the top-level paths in the repository except `.git` and those in `.gitignore`
       - .eslintrc.js
-      - .github/workflows/
+      - .github/
       - .gitignore
       - .prettierrc.json
       - README.md
@@ -96,9 +96,9 @@ tasks:
       - webpack.development.js
       - webpack.production.js
     output_paths:
-      # All the top-level paths in the repo except `.git` and those in `.gitignore`
+      # All the top-level paths in the repository except `.git` and those in `.gitignore`
       - .eslintrc.js
-      - .github/workflows/
+      - .github/
       - .gitignore
       - .prettierrc.json
       - README.md
