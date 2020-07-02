@@ -3,6 +3,7 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "moduleResolution": "node",
+    "noEmit": true,
     "strict": true
   },
   "files": ["src/images.d.ts", "src/main.tsx"]
