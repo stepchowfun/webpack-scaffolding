@@ -6,5 +6,5 @@
     "noEmit": true,
     "strict": true
   },
-  "files": ["src/images.d.ts", "src/main.tsx"]
+  "files": ["images.d.ts", "src/index/index.tsx"]
 }
