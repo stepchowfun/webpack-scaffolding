@@ -15,4 +15,9 @@ function Main() {
   );
 }
 
-ReactDOM.render(<Main />, document.getElementById('react-root'));
+ReactDOM.render(
+  <React.StrictMode>
+    <Main />
+  </React.StrictMode>,
+  document.getElementById('react-root'),
+);
