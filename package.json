@@ -1,7 +1,7 @@
 {
   "name": "webpack-scaffolding",
   "version": "1.0.0",
-  "description": "Common infrastructure for building websites.",
+  "description": "Scaffolding for building web applications.",
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.production.js",
