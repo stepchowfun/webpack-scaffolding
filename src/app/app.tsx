@@ -12,7 +12,9 @@ function App() {
   return (
     <AppContainer>
       <p>
-        <img src={smiley} alt="Smiley face" />
+        <a href="https://github.com/stepchowfun/webpack-scaffolding">
+          <img src={smiley} alt="Smiley face" />
+        </a>
       </p>
       <p>1 + 2 = {sum(1, 2)}</p>
     </AppContainer>
