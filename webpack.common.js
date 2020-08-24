@@ -22,6 +22,10 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
+          // Since we use Styled Components (an implementation of CSS-in-JS) to
+          // dynamically add CSS to the page, we use `style-loader` rather than
+          // the loader from `mini-css-extract-plugin` so that all the CSS loads
+          // at the same time (i.e., when the JavaScript loads).
           {
             loader: 'style-loader',
             options: { injectType: 'singletonStyleTag' },
@@ -30,9 +34,9 @@ module.exports = {
             loader: 'css-loader',
             options: { importLoaders: 1, sourceMap: false },
           },
-          'postcss-loader',
-          'resolve-url-loader',
-          'sass-loader',
+          { loader: 'postcss-loader', options: { sourceMap: true } },
+          { loader: 'resolve-url-loader', options: { sourceMap: true } },
+          { loader: 'sass-loader', options: { sourceMap: true } },
         ],
       },
       {
