@@ -28,11 +28,11 @@ module.exports = {
           },
           {
             loader: 'css-loader',
-            options: { importLoaders: 1, sourceMap: true },
+            options: { importLoaders: 1, sourceMap: false },
           },
-          { loader: 'postcss-loader', options: { sourceMap: true } },
-          { loader: 'resolve-url-loader', options: { sourceMap: true } },
-          { loader: 'sass-loader', options: { sourceMap: true } },
+          'postcss-loader',
+          'resolve-url-loader',
+          'sass-loader',
         ],
       },
       {
