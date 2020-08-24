@@ -1,7 +1,5 @@
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -24,8 +22,14 @@ module.exports = {
         test: /\.scss$/,
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { sourceMap: true } },
+          {
+            loader: 'style-loader',
+            options: { injectType: 'singletonStyleTag' },
+          },
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1, sourceMap: true },
+          },
           { loader: 'postcss-loader', options: { sourceMap: true } },
           { loader: 'resolve-url-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } },
@@ -42,25 +46,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'src/index/index.html',
     }),
-    new MiniCssExtractPlugin({
-      filename: '[contenthash].css',
-    }),
     new CopyPlugin({
       patterns: [{ from: 'static', to: '.' }],
     }),
   ],
   optimization: {
-    minimizer: [
-      new TerserJSPlugin({}),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          map: {
-            inline: false,
-            annotation: true,
-          },
-        },
-      }),
-    ],
+    minimizer: [new TerserJSPlugin({})],
   },
   output: {
     filename: '[contenthash].js',
