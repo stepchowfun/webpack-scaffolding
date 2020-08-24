@@ -55,7 +55,7 @@ tasks:
     user: user
     command: |
       set -euo pipefail
-      npm run build-production
+      npm run build
 
   check:
     dependencies:
