@@ -1,0 +1,16 @@
+# By default, Netlify sets `cache-control: public, max-age=0, must-revalidate` on all assets. This
+# means the browser has to make a request to validate every asset on the page, every time. Normally
+# this is a good thing, since it means the webmaster can publish changes and expect them to be live
+# immediately. However, it slows down page loads and counts against our bandwidth quota. Since we
+# fingerprint most of our assets with a checksum in the filenames, we can be much more liberal with
+# caching and still have deploys go live immediately. This file instructs Netlify to allow browsers
+# to cache assets for 24 hours (86400 seconds).
+
+/*.js
+  cache-control: public, max-age=86400, must-revalidate
+/*.js.LICENSE.txt
+  cache-control: public, max-age=86400, must-revalidate
+/*.js.map
+  cache-control: public, max-age=86400, must-revalidate
+/*.svg
+  cache-control: public, max-age=86400, must-revalidate
