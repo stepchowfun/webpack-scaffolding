@@ -117,8 +117,28 @@ tasks:
     cache: false
     dependencies:
       - install_dependencies
+    input_paths:
+      # All the top-level paths in the repository except `.git` and those in `.gitignore` and those
+      # in `mount_paths`
+      - .eslintrc.js
+      - .github/
+      - .gitignore
+      - .prettierrc.json
+      - README.md
+      - babel.config.json
+      - images.d.ts
+      - jest.config.js
+      - package-lock.json
+      - package.json
+      - postcss.config.js
+      - static/
+      - toast.yml
+      - tsconfig.json
+      - webpack.common.js
+      - webpack.development.js
+      - webpack.production.js
     mount_paths:
-      - .
+      - src/
     ports:
       - 8080:8080
     user: user
