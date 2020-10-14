@@ -46,6 +46,7 @@ tasks:
       - src/
       - static/
       - toast.yml
+      - tsconfig.eslint.json
       - tsconfig.json
       - webpack.common.js
       - webpack.development.js
@@ -84,6 +85,7 @@ tasks:
       - src/
       - static/
       - toast.yml
+      - tsconfig.eslint.json
       - tsconfig.json
       - webpack.common.js
       - webpack.development.js
@@ -104,6 +106,7 @@ tasks:
       - src/
       - static/
       - toast.yml
+      - tsconfig.eslint.json
       - tsconfig.json
       - webpack.common.js
       - webpack.development.js
@@ -133,6 +136,7 @@ tasks:
       - postcss.config.js
       - static/
       - toast.yml
+      - tsconfig.eslint.json
       - tsconfig.json
       - webpack.common.js
       - webpack.development.js
