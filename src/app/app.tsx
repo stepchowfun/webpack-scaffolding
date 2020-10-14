@@ -8,7 +8,7 @@ const AppContainer = styled.div`
   text-align: center;
 `;
 
-function App() {
+function App(): JSX.Element {
   return (
     <AppContainer>
       <p>
