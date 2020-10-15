@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserJSPlugin = require('terser-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -58,13 +58,21 @@ module.exports = {
     }),
   ],
   optimization: {
-    minimizer: [new TerserJSPlugin({})],
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+        extractComments: false,
+      }),
+    ],
   },
   output: {
     filename: '[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
   },
-  devtool: 'source-map',
   devServer: {
     contentBase: './dist',
   },
