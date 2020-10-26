@@ -9,3 +9,15 @@ tools like Webpack, React, TypeScript, etc. It also includes tools for testing,
 linting, formatting, etc. As you can see, it takes quite a bit of scaffolding to
 set up a web application these days! The purpose of this repository is to
 provide a starting point for new web projects.
+
+## Contributing
+
+For information about how to contribute, see our
+[contributing guide](https://github.com/stepchowfun/webpack-scaffolding/blob/master/CONTRIBUTING.md).
+Please observe our
+[code of conduct](https://github.com/stepchowfun/webpack-scaffolding/blob/master/CODE_OF_CONDUCT.md).
+
+## Licensing
+
+This repository is released under the MIT license, which can be found
+[here](https://github.com/stepchowfun/webpack-scaffolding/blob/master/LICENSE.md).
