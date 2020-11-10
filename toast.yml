@@ -36,6 +36,7 @@ tasks:
       - .github/
       - .gitignore
       - .prettierrc.json
+      - .stylelintrc.json
       - CODE_OF_CONDUCT.md
       - CONTRIBUTING.md
       - LICENSE.md
@@ -78,6 +79,7 @@ tasks:
       - .github/
       - .gitignore
       - .prettierrc.json
+      - .stylelintrc.json
       - CODE_OF_CONDUCT.md
       - CONTRIBUTING.md
       - LICENSE.md
@@ -102,6 +104,7 @@ tasks:
       - .github/
       - .gitignore
       - .prettierrc.json
+      - .stylelintrc.json
       - CODE_OF_CONDUCT.md
       - CONTRIBUTING.md
       - LICENSE.md
@@ -136,6 +139,7 @@ tasks:
       - .github/
       - .gitignore
       - .prettierrc.json
+      - .stylelintrc.json
       - CODE_OF_CONDUCT.md
       - CONTRIBUTING.md
       - LICENSE.md
