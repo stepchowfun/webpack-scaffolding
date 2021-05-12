@@ -41,7 +41,7 @@
     "file-loader": "^6.1.1",
     "html-webpack-plugin": "^4.5.0",
     "jest": "^26.5.2",
-    "postcss": "^8.1.1",
+    "postcss": "^8.2.10",
     "postcss-loader": "^4.0.4",
     "prettier": "^2.1.2",
     "resolve-url-loader": "^3.1.1",
